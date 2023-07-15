@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cimb Clicks</title>
+    <link rel="stylesheet" href="/dist/output.css">
+    <style>
+        .inputfile {
+            width: 0.1px;
+            height: 0.1px;
+            opacity: 0;
+            overflow: hidden;
+            position: absolute;
+            z-index: -1;
+        }
+
+        .inputfile+label {
+            font-size: 13px;
+            font-style: normal;
+            font-weight: 500;
+            line-height: normal;
+            color: white;
+            padding: 14px 53px;
+            background-color: #5e5e5e;
+            border-radius: 9px;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .receiveBottom {
+            height: 180px;
+        }
+
+        .receiveBottomMenu {
+            margin-top: 54px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="flex justify-center items-center w-full">
+        <div class="flex flex-col w-mobile h-mobile bg-cimb-red font-Lato">
+            <!-- logo -->
+            <div class="flex justify-start items-center mt-16 mx-[34px] space-x-[93px]">
+                <a href="home.html">
+                    <svg class="justify-items-start" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M17.8684 1.16192C18.0551 1.36537 18.0415 1.68166 17.8381 1.86838L7.1345 11.6917C6.95833 11.8502 6.95053 12.1476 7.139 12.3225C7.13882 12.3223 7.13917 12.3226 7.139 12.3225L17.8381 22.1416C18.0415 22.3283 18.0551 22.6446 17.8684 22.8481C17.6817 23.0515 17.3654 23.0651 17.1619 22.8784L6.46192 13.0584L6.46048 13.0571C5.85014 12.4925 5.84187 11.5118 6.46352 10.9502L17.1619 1.13163C17.3654 0.944909 17.6817 0.958473 17.8684 1.16192Z"
+                            fill="white" />
+                    </svg>
+
+                </a>
+                <h1 id="qr_title" class="font-normal text-white text-xl">DuitNow QR</h1>
+                <a href="home.html">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M2.14645 2.14645C2.34171 1.95118 2.65829 1.95118 2.85355 2.14645L21.8536 21.1464C22.0488 21.3417 22.0488 21.6583 21.8536 21.8536C21.6583 22.0488 21.3417 22.0488 21.1464 21.8536L2.14645 2.85355C1.95118 2.65829 1.95118 2.34171 2.14645 2.14645Z"
+                            fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M21.8536 2.14645C22.0488 2.34171 22.0488 2.65829 21.8536 2.85355L2.85355 21.8536C2.65829 22.0488 2.34171 22.0488 2.14645 21.8536C1.95118 21.6583 1.95118 21.3417 2.14645 21.1464L21.1464 2.14645C21.3417 1.95118 21.6583 1.95118 21.8536 2.14645Z"
+                            fill="white" />
+                    </svg>
+
+                </a>
+            </div>
+            <div id="qr_menu" class="flex flex-col bg-[#818181] mt-9 w-full h-[689px] rounded-t-[45px]">
+                <div id="qr_scan_menu" class="flex flex-col">
+                    <p class="text-lg font-medium text-white mt-14 mx-20">Place the QR in the scan
+                        area
+                    </p>
+                    <div id="qr_scan_file" class="flex items-center justify-start mt-[500px] ml-[140px]">
+                        <input type="file" name="file" id="file" class="inputfile" accept="image/png,image/jpg" />
+                        <label for="file">Gallery</label>
+                        <img src="../assets/flash.png" alt="logo flash" class="ml-[70px]">
+                    </div>
+                </div>
+                <div id="qr_receive_menu" class="hidden flex flex-col items-center font-Lato ">
+                    <img src="../assets/duitnow.png" alt="logo duitnow" class="mt-9">
+                    <img src="../assets/scanQr.png" alt="scan qr" class="mt-7">
+                    <p class="text-[15px] font-normal text-white mt-7">Darren Maranello Liga</p>
+                    <p class="text-[22px] font-semibold text-white mt-4">7639635472</p>
+                </div>
+            </div>
+            <div id="qr_bottom_menu" class="flex items-center flex-col w-full h-[109px] bg-[#343434]">
+                <svg class="mt-1" width="20" height="1" viewBox="0 0 20 1" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M0 0.5C0 0.223858 0.223858 0 0.5 0H19.5C19.7761 0 20 0.223858 20 0.5C20 0.776142 19.7761 1 19.5 1H0.5C0.223858 1 0 0.776142 0 0.5Z"
+                        fill="#ABABAB" />
+                </svg>
+                <div id="qr_bottom_menus" class="flex flex-row items-center justify-center mt-4 space-x-[169px]">
+                    <a onclick="changeScan()" class="flex flex-col items-center">
+                        <img id="qr_scan" src="../assets/qr.png" alt="logo qr">
+                        <p class="mt-2 text-base font-medium text-white">Scan</p>
+                    </a>
+                    <a onclick="changeReceive()" class="flex flex-col items-center">
+                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <g opacity="0.5">
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M8.59967 23.556C8.93693 23.2428 9.4642 23.2623 9.77737 23.5996L20 34.6086L30.2227 23.5996C30.5359 23.2623 31.0632 23.2428 31.4004 23.556C31.7377 23.8691 31.7572 24.3964 31.444 24.7337L20.6107 36.4003C20.453 36.5701 20.2318 36.6666 20 36.6666C19.7683 36.6666 19.5471 36.5701 19.3894 36.4003L8.55605 24.7337C8.24288 24.3964 8.26241 23.8691 8.59967 23.556Z"
+                                    fill="white" />
+                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                    d="M20 35C19.5397 35 19.1666 34.6269 19.1666 34.1667L19.1666 4.16667C19.1666 3.70643 19.5397 3.33333 20 3.33333C20.4602 3.33333 20.8333 3.70643 20.8333 4.16667L20.8333 34.1667C20.8333 34.6269 20.4602 35 20 35Z"
+                                    fill="white" />
+                            </g>
+                        </svg>
+                        <p class="mt-2 text-base font-medium text-cimb-grey">Receive</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
+        integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" animate></script>
+    <script type="text/javascript">
+        const tl = gsap.timeline();
+        tl.from("#qr_title", { y: 700, x: -100, duration: 0.5 })
+            .from("#qr_scan", { y: -200, x: -10, duration: 0.5 }, "<");
+
+        const receiveMenu = document.getElementById("qr_receive_menu");
+        const menu = document.getElementById("qr_menu");
+        const bottomMenu = document.getElementById("qr_bottom_menu");
+        const bottomMenus = document.getElementById("qr_bottom_menus");
+        const scanMenu = document.getElementById("qr_scan_menu");
+
+        function changeScan() {
+            menu.classList.remove("bg-cimb-black");
+            scanMenu.classList.remove("hidden");
+            receiveMenu.classList.add("hidden");
+            bottomMenu.classList.remove("receiveBottom");
+            bottomMenus.classList.remove("receiveBottomMenu");
+            gsap.from("#qr_scan_menu", { autoAlpha: 0, duration: 0.5 });
+        }
+
+        function changeReceive() {
+            menu.classList.add("bg-cimb-black");
+            scanMenu.classList.add("hidden");
+            receiveMenu.classList.remove("hidden");
+            bottomMenu.classList.add("receiveBottom");
+            bottomMenus.classList.add("receiveBottomMenu");
+            gsap.from("#qr_receive_menu", { autoAlpha: 0, duration: 0.5 });
+        }
+    </script>
+</body>
+
+</html>
