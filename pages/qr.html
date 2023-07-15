@@ -36,6 +36,14 @@
         .receiveBottomMenu {
             margin-top: 54px;
         }
+
+        .textWhite {
+            color: white !important;
+        }
+
+        .textGray {
+            color: #A5A1A1 !important;
+        }
     </style>
 </head>
 
@@ -79,7 +87,7 @@
                 </div>
                 <div id="qr_receive_menu" class="hidden flex flex-col items-center font-Lato ">
                     <img src="../assets/duitnow.png" alt="logo duitnow" class="mt-9">
-                    <img src="../assets/scanQr.png" alt="scan qr" class="mt-7">
+                    <img src="../assets/scanQr.png" alt="scan qr" class=" mt-7">
                     <p class="text-[15px] font-normal text-white mt-7">Darren Maranello Liga</p>
                     <p class="text-[22px] font-semibold text-white mt-4">7639635472</p>
                 </div>
@@ -93,11 +101,13 @@
                 </svg>
                 <div id="qr_bottom_menus" class="flex flex-row items-center justify-center mt-4 space-x-[169px]">
                     <a onclick="changeScan()" class="flex flex-col items-center">
-                        <img id="qr_scan" src="../assets/qr.png" alt="logo qr">
-                        <p class="mt-2 text-base font-medium text-white">Scan</p>
+                        <img src="../assets/qr.png" alt="logo qr" id="scan_logo1">
+                        <img src="../assets/qr2.png" alt="logo qr" id="scan_logo2" class="hidden">
+                        <p id="scan_text" class="mt-2 text-base font-medium text-white">Scan</p>
                     </a>
                     <a onclick="changeReceive()" class="flex flex-col items-center">
-                        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg id="receive_logo1" class="flex" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
                             <g opacity="0.5">
                                 <path fill-rule="evenodd" clip-rule="evenodd"
                                     d="M8.59967 23.556C8.93693 23.2428 9.4642 23.2623 9.77737 23.5996L20 34.6086L30.2227 23.5996C30.5359 23.2623 31.0632 23.2428 31.4004 23.556C31.7377 23.8691 31.7572 24.3964 31.444 24.7337L20.6107 36.4003C20.453 36.5701 20.2318 36.6666 20 36.6666C19.7683 36.6666 19.5471 36.5701 19.3894 36.4003L8.55605 24.7337C8.24288 24.3964 8.26241 23.8691 8.59967 23.556Z"
@@ -107,7 +117,16 @@
                                     fill="white" />
                             </g>
                         </svg>
-                        <p class="mt-2 text-base font-medium text-cimb-grey">Receive</p>
+                        <svg class="hidden" id="receive_logo2" width="40" height="40" viewBox="0 0 40 40" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.59961 23.556C8.93687 23.2428 9.46414 23.2623 9.77731 23.5996L20 34.6086L30.2227 23.5996C30.5358 23.2623 31.0631 23.2428 31.4004 23.556C31.7376 23.8691 31.7571 24.3964 31.444 24.7337L20.6106 36.4003C20.453 36.5701 20.2317 36.6666 20 36.6666C19.7683 36.6666 19.547 36.5701 19.3893 36.4003L8.55599 24.7337C8.24282 24.3964 8.26235 23.8691 8.59961 23.556Z"
+                                fill="white" />
+                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M20 35C19.5398 35 19.1667 34.6269 19.1667 34.1667L19.1667 4.16667C19.1667 3.70643 19.5398 3.33333 20 3.33333C20.4603 3.33333 20.8334 3.70643 20.8334 4.16667L20.8334 34.1667C20.8334 34.6269 20.4603 35 20 35Z"
+                                fill="white" />
+                        </svg>
+                        <p id="receive_text" class="mt-2 text-base font-medium text-cimb-grey">Receive</p>
                 </div>
             </div>
         </div>
@@ -118,13 +137,17 @@
     <script type="text/javascript">
         const tl = gsap.timeline();
         tl.from("#qr_title", { y: 700, x: -100, duration: 0.5 })
-            .from("#qr_scan", { y: -200, x: -10, duration: 0.5 }, "<");
+            .from("#qr_scan", { y: -200, x: -10, duration: 0.5 }, "<").from("#qr_scan_menu", { autoAlpha: 0, duration: 0.5 }, "<")
 
         const receiveMenu = document.getElementById("qr_receive_menu");
         const menu = document.getElementById("qr_menu");
         const bottomMenu = document.getElementById("qr_bottom_menu");
         const bottomMenus = document.getElementById("qr_bottom_menus");
         const scanMenu = document.getElementById("qr_scan_menu");
+        const scanLogo1 = document.getElementById("scan_logo1");
+        const receiveLogo1 = document.getElementById("receive_logo1");
+        const scanLogo2 = document.getElementById("scan_logo2");
+        const receiveLogo2 = document.getElementById("receive_logo2");
 
         function changeScan() {
             menu.classList.remove("bg-cimb-black");
@@ -133,6 +156,13 @@
             bottomMenu.classList.remove("receiveBottom");
             bottomMenus.classList.remove("receiveBottomMenu");
             gsap.from("#qr_scan_menu", { autoAlpha: 0, duration: 0.5 });
+            scanLogo1.classList.remove("hidden");
+            scanLogo2.classList.add("hidden");
+            receiveLogo1.classList.remove("hidden");
+            receiveLogo2.classList.add("hidden");
+            bottomMenu.classList.remove("textWhite");
+            document.getElementById("receive_text").classList.remove("textWhite");
+            document.getElementById("scan_text").classList.remove("textGray");
         }
 
         function changeReceive() {
@@ -142,6 +172,12 @@
             bottomMenu.classList.add("receiveBottom");
             bottomMenus.classList.add("receiveBottomMenu");
             gsap.from("#qr_receive_menu", { autoAlpha: 0, duration: 0.5 });
+            scanLogo1.classList.add("hidden");
+            scanLogo2.classList.remove("hidden");
+            receiveLogo1.classList.add("hidden");
+            receiveLogo2.classList.remove("hidden");
+            document.getElementById("receive_text").classList.add("textWhite");
+            document.getElementById("scan_text").classList.add("textGray");
         }
     </script>
 </body>
