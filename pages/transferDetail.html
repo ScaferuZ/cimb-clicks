@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cimb Clicks</title>
+    <link rel="stylesheet" href="/dist/output.css">
+</head>
+
+<body>
+    <div class="flex justify-center items-center w-full">
+        <div class="flex flex-col w-mobile h-mobile bg-cimb-red font-Lato">
+            <!-- logo -->
+            <div class="flex justify-start items-center mt-16 mx-[34px] space-x-[116px]">
+                <a href="transfer.html">
+                    <svg class="justify-items-start" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M17.8684 1.16192C18.0551 1.36537 18.0415 1.68166 17.8381 1.86838L7.1345 11.6917C6.95833 11.8502 6.95053 12.1476 7.139 12.3225C7.13882 12.3223 7.13917 12.3226 7.139 12.3225L17.8381 22.1416C18.0415 22.3283 18.0551 22.6446 17.8684 22.8481C17.6817 23.0515 17.3654 23.0651 17.1619 22.8784L6.46192 13.0584L6.46048 13.0571C5.85014 12.4925 5.84187 11.5118 6.46352 10.9502L17.1619 1.13163C17.3654 0.944909 17.6817 0.958473 17.8684 1.16192Z"
+                            fill="white" />
+                    </svg>
+
+                </a>
+                <h1 id="qr_title" class="font-normal text-white text-xl">Transfer</h1>
+                <a href="home.html">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M2.14645 2.14645C2.34171 1.95118 2.65829 1.95118 2.85355 2.14645L21.8536 21.1464C22.0488 21.3417 22.0488 21.6583 21.8536 21.8536C21.6583 22.0488 21.3417 22.0488 21.1464 21.8536L2.14645 2.85355C1.95118 2.65829 1.95118 2.34171 2.14645 2.14645Z"
+                            fill="white" />
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M21.8536 2.14645C22.0488 2.34171 22.0488 2.65829 21.8536 2.85355L2.85355 21.8536C2.65829 22.0488 2.34171 22.0488 2.14645 21.8536C1.95118 21.6583 1.95118 21.3417 2.14645 21.1464L21.1464 2.14645C21.3417 1.95118 21.6583 1.95118 21.8536 2.14645Z"
+                            fill="white" />
+                    </svg>
+
+                </a>
+            </div>
+            <div class=" flex flex-col   bg-cimb-black mt-8 w-full h-full rounded-t-[45px]">
+                <div id="qr_menu" class=" flex flex-col">
+                    <div class="flex justify-center  items-center space-x-[27px] mt-32">
+                        <div id="qr_menu_logo" class="flex items-center justify-center w-12 h-12 bg-white rounded-full">
+                        </div>
+                        <h3 class="text-[17px] text-white font-semibold">BANK BERHAD</h3>
+                    </div>
+                    <div class="mt-8 mx-[50px]">
+                        <label for="default-input" class="block text-base font-semibold text-white">Account
+                            Number</label>
+                        <input type="text" placeholder="XXXX-XXXX-XXXX" id="default-input"
+                            class="text-base font-semibold text-white opacity-70 text-center  w-full bg-[#434343] h-12 mt-2">
+                    </div>
+                    <div class="mt-[35px] mx-[50px]">
+                        <label for="default-input" class="block text-base font-semibold text-white">Amount</label>
+                        <input type="text" placeholder="MYR XXX" id="default-input"
+                            class="text-base font-semibold text-white opacity-70 text-center  w-full bg-[#434343] h-12 mt-2">
+                    </div>
+                    <div class="mt-[35px] mx-[50px]">
+                        <label for="default-input" class="block text-base font-semibold text-white">Reference</label>
+                        <input type="text" placeholder="qwerty" id="default-input"
+                            class="text-base font-semibold text-white opacity-70 text-center  w-full bg-[#434343] h-12 mt-2">
+                    </div>
+                    <a onclick="continueTransfer()" class="flex justify-center mt-[85px]"><button id="otp_btn"
+                            class="py-[14px] px-[53px] text-sm text-white font-medium bg-cimb-red rounded-[9px]">Continue</button></a>
+
+                </div>
+                <div id="qr_menu2" class="flex hidden flex-col">
+                    <div class="flex justify-center  items-center space-x-[27px] mt-8">
+                        <h3 id="detail_title" class="text-4xl text-white font-semibold text-center">CONFIRM <br>
+                            TRANSFER
+                        </h3>
+                    </div>
+                    <div class="flex flex-col justify-center  items-center space-y-[11px] mt-12">
+                        <div id="detail_logo" class="flex items-center justify-center w-12 h-12 bg-white rounded-full">
+                        </div>
+                        <h3 id="detail_text"
+                            class="text-center flex items-center justify-center text-[17px] text-white font-semibold">
+                            BANK
+                            BERHAD</h3>
+                    </div>
+                    <div class="mt-16 flex flex-col items-center space-y-[23px]">
+                        <p id="detail_label" class=" text-base font-semibold text-white">Account Number</p>
+                        <p id="detail_input" class="text-base font-semibold text-white text-center opacity-70">
+                            XXXX-XXXX-XXXX</p>
+                    </div>
+                    <div class="mt-7 flex flex-col items-center space-y-[23px]">
+                        <p id="detail_label" class=" text-base font-semibold text-white">Amount</p>
+                        <p id="detail_input" class="text-base font-semibold text-white text-center opacity-70">MYR XXX
+                        </p>
+                    </div>
+                    <div class="mt-7 flex flex-col items-center space-y-[23px]">
+                        <p id="detail_label" class=" text-base font-semibold text-white">Reference</p>
+                        <p id="detail_input" class="text-base font-semibold text-white text-center opacity-70">qwerty
+                        </p>
+                    </div>
+                    <a class="flex justify-center mt-[85px]"><button id="otp_btn" onclick="transferDetail()"
+                            class="py-[14px] px-[53px] text-sm text-white font-medium bg-cimb-red rounded-[9px]">Confirm</button></a>
+                </div>
+                <div id="qr_menu3" class="hidden flex flex-col">
+                    <div class="flex justify-center  items-center space-x-[27px] mt-24">
+                        <h3 id="detail_title" class="text-4xl text-white font-semibold text-center">SUCCESFUL
+                        </h3>
+                    </div>
+                    <div id="transfer_logo" class="flex flex-col justify-center  items-center space-y-[11px] mt-24">
+                        <div id="detail_logo" class="flex items-center justify-center w-12 h-12 bg-white rounded-full">
+                        </div>
+                        <h3 id="detail_text"
+                            class="text-center flex items-center justify-center text-[17px] text-white font-semibold">
+                            BANK
+                            BERHAD</h3>
+                    </div>
+                    <div class="mt-16 flex flex-col items-center space-y-[23px]">
+                        <p id="detail_label" class=" text-base font-semibold text-white">Reference ID</p>
+                        <p id="detail_input" class="text-base font-semibold text-white text-center opacity-70">
+                            XXXX-XXXX-XXXX</p>
+                    </div>
+                    <div class="mt-7 flex flex-col items-center space-y-[23px]">
+                        <p id="detail_label" class=" text-base font-semibold text-white">Date & Time</p>
+                        <p id="detail_input" class="text-base font-semibold text-white text-center opacity-70">XXX
+                        </p>
+                    </div>
+                    <div class="flex mt-32 items-center justify-center ">
+                        <a href="home.html" class="flex justify-center "><button id="otp_btn"
+                                class="py-[14px] px-[53px] text-sm text-white font-medium bg-cimb-red rounded-[9px]">Continue</button></a>
+                        <svg id="share" class="ml-7" width="42" height="42" viewBox="0 0 42 42" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M39.375 2.625L19.25 22.75" stroke="white" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M39.375 2.625L25.375 39.375L19.25 22.75L2.625 16.625L39.375 2.625Z" stroke="white"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.1/gsap.min.js"
+        integrity="sha512-qF6akR/fsZAB4Co1QDDnUXWnaQseLGXoniuSuSlPQK6+aWhlMZcHzkasCSlnWoe+TJuudlka1/IQ01Dnhgq95g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" animate></script>
+    <script type="text/javascript">
+        const tl = gsap.timeline();
+
+        const menu = document.getElementById("qr_menu");
+        const menu2 = document.getElementById("qr_menu2");
+        const menu3 = document.getElementById("qr_menu3");
+        const share = document.getElementById("share");
+
+        tl.from("#qr_menu", { autoAlpha: 0, duration: 0.5 })
+            .from("#qr_menu_logo", { y: -30, x: -100, duration: 0.5 }, "<");
+
+        function continueTransfer() {
+            tl.from("#detail_title", { autoAlpha: 0, duration: 0.5 })
+                .from("#detail_logo", { x: -70, duration: 0.5 }, "<")
+                .from("#detail_text", { y: -50, x: 20, duration: 0.5 }, "<")
+                .from("#detail_label", { x: -100, y: -30, duration: 0.5 }, "<")
+                .from("#detail_input", { y: -30, duration: 0.5 }, "<");
+            menu.classList.add("hidden");
+            menu2.classList.remove("hidden");
+        }
+
+        function transferDetail() {
+            tl.from("#transfer_logo", { y: -50, duration: 0.5 })
+                .from("#detail_input", { y: -100, duration: 0.5 }, "<");
+            menu2.classList.add("hidden");
+            menu3.classList.remove("hidden");
+        }
+
+        share.addEventListener('click', event => {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Cimb Click',
+                    url: 'http://127.0.0.1:5500'
+
+                })
+            }
+        })
+    </script>
+</body>
+
+</html>
