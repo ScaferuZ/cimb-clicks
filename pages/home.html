@@ -14,15 +14,15 @@
             height: 209px;
         }
 
-        .swiper {
+        /* .swiper {
             width: 900;
-        }
+        } */
     </style>
 </head>
 
 <body>
     <div class="flex justify-center items-center w-full ">
-        <div class="flex flex-col w-mobile h-mobile bg-cimb-black font-Lato overflow-hidden">
+        <div class="flex flex-col w-mobile h-mobile bg-cimb-black font-Lato overflow-y-hidden">
             <!-- logo -->
             <div class="flex  ml-[87px] items-center mt-16">
                 <svg id="idx_logo" width="247" height="69" viewBox="0 0 247 69" fill="none"
@@ -92,12 +92,12 @@
                     </svg>
                 </div>
             </div>
-            <div id="home_content" class="flex flex-col justify-start mt-16 mx-[61px]">
-                <h1 class="text-xl font-semibold text-white">Cards</h1>
-                <div class="swiper mySwiper mt-7">
-                    <div class="swiper-wrapper">
+            <div id="home_content" class="flex flex-col justify-start mt-16">
+                <h1 class="text-xl font-semibold text-white mb-7 ml-[61px]">Cards</h1>
+                <div class="swiper mySwiper overflow-x-visible" style="margin: 0 !important;">
+                    <div class="swiper-wrapper overflow-x-visible">
                         <!-- main card -->
-                        <div class="swiper-slide  flex flex-col rounded-[21px] py-7 px-9" style="background: rgb(240,56,43);
+                        <a href="accounts.html" class=" swiper-slide flex flex-col rounded-[21px] py-7 px-9" style="background: rgb(240,56,43);
                             background: linear-gradient(158deg, rgba(240,56,43,1) 0%, rgba(149,230,226,1) 140%);
                              ">
                             <h2 class="text-sm text-white font-medium">Savings Account</h2>
@@ -108,9 +108,10 @@
                                 </div>
                                 <img class="ml-[73px]" src="../assets/mastercard.png" alt="">
                             </div>
-                        </div>
+                        </a>
                         <!-- main card -->
-                        <div class="swiper-slide swiper-slide-active flex flex-col rounded-[21px] py-7 px-9" style="background: rgb(240,56,43);
+                        <a href="accounts.html"
+                            class="swiper-slide swiper-slide-active flex flex-col rounded-[21px] py-7 px-9" style="background: rgb(240,56,43);
                             background: linear-gradient(158deg, rgba(240,56,43,1) 0%, rgba(149,230,226,1) 140%); ">
                             <h2 class="text-sm text-white font-medium">Savings Account</h2>
                             <div class="flex mt-[88px] items-center">
@@ -120,9 +121,9 @@
                                 </div>
                                 <img class="ml-[73px]" src="../assets/mastercard.png" alt="">
                             </div>
-                        </div>
+                        </a>
                         <!-- main card -->
-                        <div class="swiper-slide flex flex-col rounded-[21px] py-7 px-9" style="background: rgb(240,56,43);
+                        <a href="accounts.html" class="swiper-slide flex flex-col rounded-[21px] py-7 px-9" style="background: rgb(240,56,43);
                             background: linear-gradient(158deg, rgba(240,56,43,1) 0%, rgba(149,230,226,1) 140%); ">
                             <h2 class="text-sm text-white font-medium">Savings Account</h2>
                             <div class="flex mt-[88px] items-center">
@@ -132,7 +133,7 @@
                                 </div>
                                 <img class="ml-[73px]" src="../assets/mastercard.png" alt="">
                             </div>
-                        </div>
+                        </a>
                     </div>
                 </div>
                 <div class="flex justify-center items-center mt-1.5">
@@ -148,7 +149,7 @@
                             fill="white" />
                     </svg>
                 </div>
-                <div class="flex flex-row space-x-4 items-center mt-8">
+                <div class="flex flex-row space-x-4 items-center mt-8 ml-[61px]">
                     <h2 class="font-medium text-xl text-white">Quick Access</h2>
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd"
@@ -266,20 +267,21 @@
             slidesPerView: 'auto',
             spaceBetween: 30,
             initialSlide: 1,
-            breakpoints: {
-                640: {
-                    slidesPerView: 2,
-                    spaceBetween: 0,
-                },
-                768: {
-                    slidesPerView: 2,
-                    spaceBetween: 10,
-                },
-                1024: {
-                    slidesPerView: 'auto',
-                    spaceBetween: 20,
-                },
-            }
+            centeredSlides: true,
+            // breakpoints: {
+            //     640: {
+            //         slidesPerView: 2,
+            //         spaceBetween: 0,
+            //     },
+            //     768: {
+            //         slidesPerView: 2,
+            //         spaceBetween: 10,
+            //     },
+            //     1024: {
+            //         slidesPerView: 'auto',
+            //         spaceBetween: 20,
+            //     },
+            // }
         });
 
         const tl = gsap.timeline();
