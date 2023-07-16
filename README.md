@@ -69,7 +69,7 @@
 <h3 align="center">Cimb Clicks</h3>
 
   <p align="center">
-    Redesigning an banking mobile app
+    Redesigning a banking mobile app
     <br />
     <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
