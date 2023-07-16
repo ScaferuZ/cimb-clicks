@@ -22,7 +22,7 @@
 
 <body>
     <div class="flex justify-center items-center w-full ">
-        <div class="flex flex-col w-mobile h-mobile bg-cimb-black font-Lato">
+        <div class="flex flex-col w-mobile h-mobile bg-cimb-black font-Lato overflow-hidden">
             <!-- logo -->
             <div class="flex  ml-[87px] items-center mt-16">
                 <svg id="idx_logo" width="247" height="69" viewBox="0 0 247 69" fill="none"
@@ -199,6 +199,36 @@
                             <p class="mt-5 text-xs font-medium text-cimb-grey">Payments</p>
 
                         </button>
+                        <div id="popup-modal" tabindex="-1"
+                            class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto inset-0 h-[calc(100%-1rem)] max-h-full">
+                            <div id="popupp" class="flex flex-col items-center ">
+                                <div class="relative w-[301px]">
+                                    <div class="relative bg-[#343434] rounded-[30px] shadow ">
+                                        <button type="button"
+                                            class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
+                                            data-modal-hide="popup-modal">
+                                        </button>
+                                        <div class="p-6 text-center">
+                                            <h3 class="mb-5 text-lg font-semibold text-white">YOU DO NOT HAVE ANY
+                                                ACCOUNT AT THIS MOMENT.</h3>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button data-modal-hide="popup-modal" type="button"
+                                    class="mt-10 items-center inline-flex justify-center w-14 h-14 rounded-full text-white bg-red-600 ">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M2.14645 2.14645C2.34171 1.95118 2.65829 1.95118 2.85355 2.14645L21.8536 21.1464C22.0488 21.3417 22.0488 21.6583 21.8536 21.8536C21.6583 22.0488 21.3417 22.0488 21.1464 21.8536L2.14645 2.85355C1.95118 2.65829 1.95118 2.34171 2.14645 2.14645Z"
+                                            fill="white" />
+                                        <path fill-rule="evenodd" clip-rule="evenodd"
+                                            d="M21.8536 2.14645C22.0488 2.34171 22.0488 2.65829 21.8536 2.85355L2.85355 21.8536C2.65829 22.0488 2.34171 22.0488 2.14645 21.8536C1.95118 21.6583 1.95118 21.3417 2.14645 21.1464L21.1464 2.14645C21.3417 1.95118 21.6583 1.95118 21.8536 2.14645Z"
+                                            fill="white" />
+                                    </svg>
+                                </button>
+
+                            </div>
+                        </div>
                     </a>
                     <a class="flex flex-col items-center" href="accounts.html">
                         <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -221,35 +251,6 @@
                     <p class="text-sm font-medium text-[#FF7B7B]">Enter Amount...</p>
                 </div>
             </a>
-            <div id="popup-modal" tabindex="-1"
-                class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
-                <div id="popupp" class="flex flex-col items-center ">
-                    <div class="relative w-[301px]">
-                        <div class="relative bg-[#343434] rounded-[30px] shadow ">
-                            <button type="button"
-                                class="absolute top-3 right-2.5 text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                                data-modal-hide="popup-modal">
-                            </button>
-                            <div class="p-6 text-center">
-                                <h3 class="mb-5 text-lg font-semibold text-white">YOU DO NOT HAVE ANY
-                                    ACCOUNT AT THIS MOMENT.</h3>
-                            </div>
-                        </div>
-                    </div>
-                    <button data-modal-hide="popup-modal" type="button"
-                        class="mt-10 items-center inline-flex justify-center w-14 h-14 rounded-full text-white bg-red-600 ">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M2.14645 2.14645C2.34171 1.95118 2.65829 1.95118 2.85355 2.14645L21.8536 21.1464C22.0488 21.3417 22.0488 21.6583 21.8536 21.8536C21.6583 22.0488 21.3417 22.0488 21.1464 21.8536L2.14645 2.85355C1.95118 2.65829 1.95118 2.34171 2.14645 2.14645Z"
-                                fill="white" />
-                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M21.8536 2.14645C22.0488 2.34171 22.0488 2.65829 21.8536 2.85355L2.85355 21.8536C2.65829 22.0488 2.34171 22.0488 2.14645 21.8536C1.95118 21.6583 1.95118 21.3417 2.14645 21.1464L21.1464 2.14645C21.3417 1.95118 21.6583 1.95118 21.8536 2.14645Z"
-                                fill="white" />
-                        </svg>
-                    </button>
-
-                </div>
-            </div>
 
 
         </div>
