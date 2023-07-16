@@ -12,7 +12,7 @@ module.exports = {
       },
       colors: {
         "cimb-black": "#252525",
-        "cimb-red": "#97231A",
+        "cimb-red": "#C4291C",
         "cimb-grey": "#A5A1A1",
       },
       width: {
