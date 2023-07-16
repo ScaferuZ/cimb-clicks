@@ -13,6 +13,17 @@
             width: 332px;
             height: 209px;
         }
+
+        textarea:focus,
+        input:focus {
+            outline: none;
+            -webkit-box-shadow: none;
+            box-shadow: none;
+        }
+
+        *:focus {
+            outline: none;
+        }
     </style>
 </head>
 
@@ -245,8 +256,8 @@
                 <h3 class="text-xl font-medium text-white mt-8">DuitNow to Mobile</h3>
                 <div class="flex items-center space-x-8 mt-6">
                     <h4 class="text-3xl font-semibold text-white">MYR</h4>
-                    <input type="text" id="default-input" placeholder="Enter Amount..."
-                        class="bg-transparent border-0 text-[#FF7B7B] text-sm rounded-lg  block w-full p-2.5 placeholder-[#FF7B7B]">
+                    <input type="text" id="amount_input" placeholder="Enter Amount..."
+                        class="bg-transparent border-0 border-transparent text-[#FF7B7B] text-sm rounded-lg outline-none w-full p-2.5 placeholder-[#FF7B7B] focus:ring-0">
                 </div>
             </div>
 
@@ -290,7 +301,7 @@
 
         tl.from("#home_name", { y: 300, duration: 0.5 }).from("#home_content", { autoAlpha: 0, duration: 0.5 }, "<")
 
-        document.getElementById("default_input").addEventListener('keydown', event => {
+        document.getElementById("amount_input").addEventListener('keydown', event => {
             if (event.keyCode == 13) {
                 window.location.href = "transfer.html"
             }
